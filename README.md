@@ -1,7 +1,6 @@
 ##### in progress
 
-* настроить базовые конфиги api platform
-* создать сущности юзеров и описать авторизацию (JWT)
+* get token и refresh token
 
 ### Run app dev
  В .env:
