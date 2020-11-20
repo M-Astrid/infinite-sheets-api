@@ -5,3 +5,7 @@
 authentication_token:
     path: /auth/login
     methods: ['POST']
+
+refresh_token:
+    path:     /auth/token/refresh
+    defaults: { _controller: gesdinet.jwtrefreshtoken:refresh }
