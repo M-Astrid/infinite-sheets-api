@@ -32,6 +32,10 @@ final class SwaggerDecorator implements NormalizerInterface
                     'type' => 'string',
                     'readOnly' => true,
                 ],
+                'refresh_token' => [
+                    'type' => 'string',
+                    'readOnly' => true,
+                ],
             ],
         ];
 
@@ -51,13 +55,42 @@ final class SwaggerDecorator implements NormalizerInterface
 
         $tokenDocumentation = [
             'paths' => [
-                '/authentication_token' => [
+                '/auth/login' => [
                     'post' => [
                         'tags' => ['Token'],
                         'operationId' => 'postCredentialsItem',
                         'summary' => 'Get JWT token to login.',
                         'requestBody' => [
-                            'description' => 'Create new JWT Token',
+                            'description' => 'Create new JWT Access Token and Refresh Token',
+                            'content' => [
+                                'application/json' => [
+                                    'schema' => [
+                                        '$ref' => '#/components/schemas/Credentials',
+                                    ],
+                                ],
+                            ],
+                        ],
+                        'responses' => [
+                            Response::HTTP_OK => [
+                                'description' => 'Get JWT token',
+                                'content' => [
+                                    'application/json' => [
+                                        'schema' => [
+                                            '$ref' => '#/components/schemas/Token',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                '/auth/token/refresh' => [
+                    'post' => [
+                        'tags' => ['Token'],
+                        'operationId' => 'postCredentialsItem',
+                        'summary' => 'Get JWT token to login.',
+                        'requestBody' => [
+                            'description' => 'Refresh JWT Access Token',
                             'content' => [
                                 'application/json' => [
                                     'schema' => [
