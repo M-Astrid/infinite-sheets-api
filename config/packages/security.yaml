@@ -1,13 +1,18 @@
 security:
     encoders:
         App\Entity\User:
-            algorithm: argon2i
+            algorithm: sha512
+            encode-as-base64: true
+            iterations: 10
+
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         app_user_provider:
             entity:
                 class: App\Entity\User
                 property: username
+        # used to reload user from session & other features (e.g. switch_user)
+
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
 
