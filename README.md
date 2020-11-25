@@ -1,10 +1,10 @@
 ##### in progress
 
-* get token и refresh token
+* get users
 
 ### Run app dev
- В .env:
 1) указать DATABASE_URL в .env
+2) выполнить:
 
     
     composer install
