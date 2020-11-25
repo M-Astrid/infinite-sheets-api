@@ -1,0 +1,22 @@
+\App\Entity\User:
+    attributes:
+        defaults:
+            _api_receive: false
+        normalization_context:
+            groups: ['read']
+    collectionOperations:
+        get_user_list:
+            method: 'GET'
+            path: '/users'
+            security: 'is_granted("ROLE_ADMIN")'
+            swagger_context:
+                summary: 'Retrieves user list'
+    itemOperations:
+        create_user:
+            method: 'POST'
+            path: '/users'
+            security: 'is_granted("ROLE_ADMIN")'
+            swagger_context:
+                summary: 'Creates user'
+            controller:
+

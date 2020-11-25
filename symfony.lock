@@ -1,7 +1,4 @@
 {
-    "api-platform/api-pack": {
-        "version": "v1.3.0"
-    },
     "api-platform/core": {
         "version": "2.5",
         "recipe": {
@@ -304,9 +301,6 @@
             "config/packages/test/monolog.yaml"
         ]
     },
-    "symfony/orm-pack": {
-        "version": "v2.0.0"
-    },
     "symfony/polyfill-intl-grapheme": {
         "version": "v1.20.0"
     },
@@ -368,9 +362,6 @@
     },
     "symfony/serializer": {
         "version": "v5.1.8"
-    },
-    "symfony/serializer-pack": {
-        "version": "v1.0.4"
     },
     "symfony/service-contracts": {
         "version": "v2.2.0"
