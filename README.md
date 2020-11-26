@@ -1,6 +1,6 @@
 ##### in progress
 
-* get users
+* validation
 
 ### Run app dev
 1) указать DATABASE_URL в .env

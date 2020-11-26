@@ -18,5 +18,4 @@
             security: 'is_granted("ROLE_ADMIN")'
             swagger_context:
                 summary: 'Creates user'
-            controller:
-
+            controller: 'App\Controller\UserController::create'

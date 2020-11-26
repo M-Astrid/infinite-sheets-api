@@ -19,6 +19,8 @@ class User implements UserInterface
     const ROLE_USER  = 'ROLE_USER';
 
     /**
+     *
+     *
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -28,7 +30,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
-     *@Groups({"read"})
+     * @Groups({"read"})
      */
     private $username = '';
 

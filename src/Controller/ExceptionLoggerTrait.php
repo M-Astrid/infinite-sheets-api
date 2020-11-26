@@ -14,8 +14,9 @@ trait ExceptionLoggerTrait
         $this->logger = $logger;
     }
 
-    protected function logException(\Throwable $exception): void
+    protected function logException(\Throwable $exception, string $user): void
     {
-        $this->logger->error($exception->getMessage(), $exception->getTrace());
+        $message = sprintf('[User]: %s, [Exception]: %s', $user, $exception->getMessage());
+        $this->logger->error($message, $exception->getTrace());
     }
 }
